@@ -11,6 +11,8 @@ main {
 }
 
 .item-list__img {
+  width: 150px;
+  height: 150px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   margin-right: 20px;

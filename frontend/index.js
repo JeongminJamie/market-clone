@@ -14,7 +14,7 @@ const calculateTime = (timestamp) => {
     return `${minute}분 전`;
   } else if (second > 0) {
     return `${second}초 전 `;
-  } else "방금 전 ";
+  } else return "방금 전 ";
 };
 
 const renderData = (data) => {

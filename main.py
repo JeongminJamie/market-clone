@@ -62,6 +62,6 @@ async def get_image(item_id):
                             """).fetchone()[0]
   # 16진법의 image를 blob인 이진법 형태로 바꾸기 with .fromhex()
   # 하나의 데이터만 필요하기에, json 형식이 아닌 response로 보내준다: 이 같은 경우는 blob 형태로 보내줌 
-  return Response(content=bytes.fromhex(image_bytes))
+  return Response(content=bytes.fromhex(image_bytes), media_type="image/*")
 
 app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")

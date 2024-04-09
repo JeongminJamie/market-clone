@@ -9,6 +9,17 @@ import sqlite3
 con = sqlite3.connect('db.db', check_same_thread=False)
 cur = con.cursor() 
 
+# 배포할 때의 서버에서 테이블을 dbeaver가 아닌 배포 서버에서 테이블 생성하기
+cur.execute(f"""
+            CREATE TABLE IF NOT EXISTS items(
+	          id INTEGER PRIMARY KEY,
+	          title TEXT NOT NULL,
+	          image BLOB,
+	          price INTEGER NOT NULL,
+	          description TEXT,
+	          place TEXT NOT NULL,
+            """)
+
 app = FastAPI()
 
 @app.post("/items")
